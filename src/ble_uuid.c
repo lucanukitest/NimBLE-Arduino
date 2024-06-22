@@ -187,11 +187,7 @@ ble_uuid_init_from_att_buf(ble_uuid_any_t *uuid, const void *buf, size_t len)
 int
 ble_uuid_to_any(const ble_uuid_t *uuid, ble_uuid_any_t *uuid_any)
 {
-    NIMBLE_LOGD(LOG_TAG, "Set pincode failed: %p", uuid);
-    if (uuid == NULL) {
-        return BLE_HS_EINVAL; // O un altro codice di errore appropriato
-    }
-
+    
     VERIFY_UUID(uuid);
 
     uuid_any->u.type = uuid->type;
